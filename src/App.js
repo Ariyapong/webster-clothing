@@ -1,6 +1,6 @@
 import React from "react";
-import { Route } from 'react-router-dom';
-import logo from "./logo.svg";
+import { Route, Switch } from 'react-router-dom';
+// import logo from "./logo.svg";
 import "./App.css";
 
 import HomePage from './pages/homepage/homepage.component';
@@ -13,8 +13,14 @@ const HatsPage = () => (
 
 function App() {
   return (
+    // <div>
+    //   <HomePage />
+    // </div>
     <div>
-      <HomePage />
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/hats' component={HatsPage} />
+      </Switch>
     </div>
   );
 }
